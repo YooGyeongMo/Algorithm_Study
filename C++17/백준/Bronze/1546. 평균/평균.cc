@@ -13,9 +13,7 @@ int main() {
     array<int,1000> arr = {0};
 
     for (int i = 0; i<N; i++) {
-        int m;
-        cin >> m;
-        arr[i] = m;
+        cin >> arr[i];
     }
 
     double sum = 0;
@@ -29,8 +27,7 @@ int main() {
     }
 
     double result = ((sum/mx)*100)/N;
-
-    cout.precision(13);
+    
     cout << result ;
 
 
