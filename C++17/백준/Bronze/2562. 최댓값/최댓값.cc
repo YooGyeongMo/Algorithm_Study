@@ -9,10 +9,10 @@ int main() {
 
     const int N = 10;
     int arr[N] = { 0 };
-    int idx = 0;
+    int idx = 1;
     for (int i = 1; i<N; i++) cin >> arr[i];
 
-    for (int i = 1; i<N; i++) {
+    for (int i = 2; i<N; i++) {
         if (arr[idx] < arr[i]) idx = i;
     }
 
