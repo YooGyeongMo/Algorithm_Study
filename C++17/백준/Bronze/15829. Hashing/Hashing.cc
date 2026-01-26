@@ -1,32 +1,26 @@
 #include <iostream>
-
+#include <string>
 using namespace std;
 
-int sqrt(int a, int b) {
-    int result = 1;
-
-    while (b > 0) {
-        b--;
-        result *= a;
-    }
-
-    return result;
-}
-
 int main() {
-
-    ios_base::sync_with_stdio(false);
+    ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int L;
+    int N;
     string str;
-    int result = 0;
-    cin >> L;
+    long long result = 0;
+    long long MOD = 1234567891;
+    cin >> N;
     cin >> str;
+    long long p = 1;
 
-    for (int i = 0; i < str.size(); i++) {
-        result += sqrt(31,i) * ( str[i] - 'a' + 1);
+    for (int i = 0; i<N; i++) {
+        int value = 0;
+        value = str[i] - 'a' + 1;
+        result = ( result + value * p) % MOD;
+        p = (p * 31) % MOD ;
     }
 
     cout << result;
+
 }
