@@ -1,7 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-
 
 using namespace std;
 
@@ -9,22 +6,25 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    vector <int> v;
+    const int OFFSET = 1000000;
+    const int SIZE = 2000001;
 
-    int N;
+    bool exist[SIZE] = {false};
+
+    int N = 0;
     cin >> N;
-    int num;
 
-    for (int i = 0; i<N; i++) {
-        cin >> num;
-        v.push_back(num);
+    for (int i = 0; i < N; i++) {
+        int x;
+        cin >> x;
+        exist[x + OFFSET] = true;
     }
 
-    sort(v.begin(),v.end());
-
-    for (int i = 0; i<N; i++) {
-        cout << v[i] << "\n";
+    for (int i = 0; i < SIZE; i++) {
+        if (exist[i]) {
+            cout << i - OFFSET << '\n';
+        }
     }
-
+    
     return 0;
 }
