@@ -1,27 +1,25 @@
 #include <iostream>
-#include <vector>
+#include <cstring>
 
 using namespace std;
 
-int M,N,K;
-vector<vector<int>> farm;
+int M, N, K;
+int farm[50][50];
+bool visited[50][50];
 
-//상하 좌우
-int xArr[4] = {-1,1,0,0};
-int yArr[4] = {0,0,-1,1};
-
+int dx[4] = {-1,1,0,0};
+int dy[4] = {0,0,-1,1};
 
 void dfs(int y, int x) {
-    farm[y][x] = 0;
+    visited[y][x] = true;
 
     for (int d = 0; d<4; d++) {
-        int ny = y + yArr[d];
-        int nx = x + xArr[d];
+        int ny = y+dy[d];
+        int nx = x+dx[d];
 
-        if (0 <= ny && ny < N && 0<=nx && nx < M) {
-            if (farm[ny][nx] == 1) {
-                dfs(ny,nx);
-            }
+        if (ny < 0 || ny >= N || nx < 0 || nx >= M) continue;
+        if (farm[ny][nx] == 1 && !visited[ny][nx]) {
+            dfs(ny,nx);
         }
     }
 }
@@ -33,28 +31,27 @@ int main() {
 
     int T;
     cin >> T;
-
-    for (int i = 0; i<T; i++) {
+    while (T--) {
         cin >> M >> N >> K;
-        // vector<vector<int>> farm(N,vector<int>(M,0));
-        farm.assign(N, vector<int>(M, 0));
+        memset(farm, 0, sizeof(farm));
+        memset(visited, false, sizeof(visited));
 
-        int count = 0;
-
-        for (int j = 0; j<K; j++) {
+        for (int i = 0; i<K; i++) {
             int x, y;
             cin >> x >> y;
             farm[y][x] = 1;
-            }
+        }
+        int count = 0;
 
         for (int y = 0; y<N; y++) {
             for (int x = 0; x<M; x++) {
-                if (farm[y][x]==1) {
+                if (farm[y][x] == 1 && !visited[y][x]) {
                     count++;
                     dfs(y,x);
                 }
             }
         }
         cout << count << "\n";
+
     }
 }
