@@ -14,7 +14,7 @@ int main(void) {
 
         cin >> x;
 
-        if (x%2 != 0) {
+        if (x & 1) {
             check = true;
             sum += x;
             if (minValue > x) {
