@@ -3,37 +3,33 @@
 
 using namespace std;
 
-int main() {
-    int arr[9];
-    int sum = 0;
+int main(void) {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    for (int i = 0; i < 9; i++) {
-        cin >> arr[i];
-        sum += arr[i];
-    }
+    int arr[9], result[7];
 
-    sort(arr, arr + 9);
+    for (int i = 0; i<9; i++) cin >> arr[i];
 
-    int target = sum - 100;   // 가짜 2명의 합
-    int left = 0;
-    int right = 8;
+    for (int i = 0; i<8; i++) {
+        int sum = 0;
+        for (int j = i+1; j<9; j++) {
+            sum = 0;
 
-    while (left < right) {
-        int twoSum = arr[left] + arr[right];
-
-        if (twoSum == target) {
-            for (int i = 0; i < 9; i++) {
-                if (i != left && i != right) {
-                    cout << arr[i] << '\n';
-                }
+            for (int z = 0, idx = 0; z<9; z++) {
+                if (z != i && z != j) result[idx++] = arr[z];
             }
-            break;
-        } else if (twoSum < target) {
-            left++;
-        } else {
-            right--;
+
+            for (int a = 0; a < 7; a++ ) sum += result[a];
+
+            if (sum == 100) break;
         }
+        if (sum == 100) break;
     }
+
+
+    sort(result, result+7);
+    for (int i = 0 ; i<7; i++) cout << result[i] << "\n";
 
     return 0;
 }
