@@ -1,27 +1,28 @@
 #include <iostream>
+#include <algorithm>
+
 using namespace std;
 
-int main() {
-    int n;
-    cin >> n;
+int main(void) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    int y = 0;
-    int m = 0;
+    int A = 30, B = 60;
 
-    for (int i = 0; i < n; i++) {
-        int t;
-        cin >> t;
+    int N, aSum = 0, bSum = 0;
 
-        y += (t / 30 + 1) * 10;
-        m += (t / 60 + 1) * 15;
+    cin >> N;
+
+    for (int i = 0; i<N; i++) {
+        int x;
+        cin >> x;
+        aSum += (x/A + 1) * 10;
+        bSum += (x/B + 1) * 15;
     }
 
-    if (y < m) {
-        cout << "Y " << y;
-    } else if (m < y) {
-        cout << "M " << m;
-    } else {
-        cout << "Y M " << y;
+    if (aSum == bSum) cout << "Y M " << aSum;
+    else {
+        ( aSum < bSum ) ? (cout << "Y " << aSum) : (cout << "M " << bSum);
     }
 
     return 0;
