@@ -1,21 +1,27 @@
 #include <iostream>
+#include <algorithm>
+
 using namespace std;
 
-int main() {
+int main(void) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     long long A, B;
+    int cnt = 0;
     cin >> A >> B;
 
-    long long start = min(A, B);
-    long long end = max(A, B);
+    long long start = min(A,B);
+    long long end = max(A,B);
 
-    long long count = end - start - 1;
+    cnt = end - start - 1;
 
-    if (count < 0) count = 0;
+    if (cnt < 0) cnt = 0;
 
-    cout << count << '\n';
+    cout << cnt << "\n" ;
 
-    for (long long i = start + 1; i < end; i++) {
-        cout << i << ' ';
+    for (long long i = start+1; i < end; i++) {
+        cout << i << " ";
     }
 
     return 0;
