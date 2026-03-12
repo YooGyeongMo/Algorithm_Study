@@ -9,17 +9,18 @@ int main(void) {
 
     int arr[9], sum = 0;
 
-    for (int i = 0; i<9; i++) {
+    for (int i = 0; i<9; i++ ) {
         cin >> arr[i];
         sum += arr[i];
     }
-    sort(arr,arr+9);
 
-    for (int i = 0 ; i<8; i++) {
-        for (int j = i+1; j<9; j++) {
-            if (sum - arr[i] - arr[j] == 100) {
-                for (int z = 0; z<9; z++) {
-                    if (z == i || z == j) continue;
+    sort(arr, arr+9);
+
+    for (int i = 0; i < 8; i++) {
+        for (int j = i+1; j < 9; j++) {
+            if ( sum - arr[i] - arr[j] == 100) {
+                for ( int z = 0; z < 9; z++) {
+                    if (arr[z] == arr[i] || arr[z] == arr[j]) continue;
                     cout << arr[z] << "\n";
                 }
                 return 0;
