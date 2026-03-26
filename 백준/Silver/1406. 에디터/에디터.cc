@@ -1,45 +1,78 @@
 #include <iostream>
 #include <string>
-#include <list>
 
 using namespace std;
 
+const int MX = 1000005;
+char dat[MX];
+int pre[MX];
+int nxt[MX];
+int unused = 1;
+
+void insert (int addr, char chr) {
+    dat[unused] = chr;
+    pre[unused] = addr;
+    // 처음에 넣을때는 지금 내가 마지막이면 -1을 가리키는게 맞음.
+    nxt[unused] = nxt[addr];
+    // nxt[addr]은 지금 추가하려는 것의 다음의 dat의 주소
+    if (nxt[addr] != -1) pre[nxt[addr]] = unused;
+    // 전에꺼 다음을 가리킴 cursor
+    nxt[addr] = unused;
+    unused++;
+}
+
+void erase( int addr ) {
+    nxt[pre[addr]] = nxt[addr];
+    if (nxt[addr] != -1) pre[nxt[addr]] = pre[addr];
+}
+
+void traverse() {
+    int cur = nxt[0];
+    while (cur != -1) {
+        cout << dat[cur];
+        cur = nxt[cur];
+    }
+}
+
 int main(void) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    fill(pre,pre+MX, -1);
+    fill(nxt,nxt+MX, -1);
+
     string str;
     int N;
-    list <char> memo;
+    int cursor = 0;
     cin >> str >> N;
-    for (char c: str) memo.push_back(c);
 
-    // list<char> 를 순회할수있는 iterator 타입의 cur 변수를 하나 만든다.
-    // 초기에는 end()를 가리킴.
-
-    list<char> :: iterator cur = memo.end();
-
+    for (char c : str) {
+        insert(cursor, c);
+        cursor++;
+    }
+    
     while (N--) {
         char op;
-
         cin >> op;
-
         if (op == 'L') {
-            if (cur != memo.begin()) cur--;
+            if (pre[cursor] != -1) cursor = pre[cursor];
         }
         else if (op == 'D') {
-            if ( cur != memo.end()) cur++;
+            if (nxt[cursor] != -1) cursor = nxt[cursor];
         }
         else if (op == 'B') {
-            if (cur != memo.begin()) {
-                cur--;
-                // 지운다음 위치 반환 erase
-                cur = memo.erase(cur);
+            if (pre[cursor] != -1) {
+                erase(cursor);
+                cursor = pre[cursor];
             }
         }
         else {
             char x;
             cin >> x;
-            memo.insert(cur,x);
+            insert(cursor, x);
+            cursor = nxt[cursor];
         }
     }
 
-    for (char c : memo) cout << c;
+    traverse();
 }
