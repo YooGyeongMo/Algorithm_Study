@@ -1,36 +1,45 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <list>
+
 using namespace std;
 
 int main(void) {
-  ios::sync_with_stdio(0);
-  cin.tie(0);
-  string init;
-  cin >> init;
-  list<char> L;
-  for (auto c : init) L.push_back(c);
-  auto cursor = L.end();
-  int q;
-  cin >> q;
-  while (q--) {
-    char op;
-    cin >> op;
-    if (op == 'P') {
-      char add;
-      cin >> add;
-      L.insert(cursor, add);
+    string str;
+    int N;
+    list <char> memo;
+    cin >> str >> N;
+    for (char c: str) memo.push_back(c);
+
+    // list<char> 를 순회할수있는 iterator 타입의 cur 변수를 하나 만든다.
+    // 초기에는 end()를 가리킴.
+
+    list<char> :: iterator cur = memo.end();
+
+    while (N--) {
+        char op;
+
+        cin >> op;
+
+        if (op == 'L') {
+            if (cur != memo.begin()) cur--;
+        }
+        else if (op == 'D') {
+            if ( cur != memo.end()) cur++;
+        }
+        else if (op == 'B') {
+            if (cur != memo.begin()) {
+                cur--;
+                // 지운다음 위치 반환 erase
+                cur = memo.erase(cur);
+            }
+        }
+        else {
+            char x;
+            cin >> x;
+            memo.insert(cur,x);
+        }
     }
-    else if (op == 'L') {
-      if (cursor != L.begin()) cursor--;
-    }
-    else if (op == 'D') {
-      if (cursor != L.end()) cursor++;
-    }
-    else { // 'B'
-      if (cursor != L.begin()) {
-        cursor--;
-        cursor = L.erase(cursor);
-      }
-    }
-  }
-  for (auto c : L) cout << c;
+
+    for (char c : memo) cout << c;
 }
