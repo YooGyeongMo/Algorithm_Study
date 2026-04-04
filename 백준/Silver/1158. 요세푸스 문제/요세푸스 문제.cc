@@ -16,17 +16,15 @@ int main(void) {
     for (int i = 1; i<=N; i++) {
         queue.push_back(i);
     }
+    int idx = 0;
 
     cout << '<';
 
     while (!queue.empty()) {
+        idx = (idx + K - 1) % queue.size();
 
-        for (int i = 0; i<K-1;i++) {
-            queue.push_back(queue.front());
-            queue.pop_front();
-        }
-        cout << queue.front();
-        queue.pop_front();
+        cout << queue[idx];
+        queue.erase(queue.begin()+idx);
 
         if (!queue.empty()) {
             cout << ", ";
