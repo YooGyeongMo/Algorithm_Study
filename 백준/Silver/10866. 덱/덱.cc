@@ -1,10 +1,11 @@
 #include <iostream>
-#include <deque>
 #include <string>
 
 using namespace std;
 
-deque<int> dq;
+const int MX = 1000005;
+int dat[2*MX+1];
+int head = MX , tail = MX;
 
 int main(void) {
     ios_base::sync_with_stdio(false);
@@ -21,37 +22,37 @@ int main(void) {
         if ( cmp == "push_front") {
             int x ;
             cin >> x;
-            dq.push_front(x);
+            dat[--head] = x;
         }
 
         else if ( cmp == "push_back") {
             int x;
             cin >> x;
-            dq.push_back(x);
+            dat[tail++] = x;
         }
 
         else if (cmp == "pop_front") {
-            if (dq.empty()) cout << -1 << "\n";
+            if (head==tail) cout << -1 << "\n";
             else {
-                cout << dq.front() << "\n";
-                dq.pop_front();
+                cout << dat[head] << "\n";
+                head++;
             }
         }
 
         else if (cmp == "pop_back") {
-            if (dq.empty()) cout << -1 << "\n";
+            if (head==tail) cout << -1 << "\n";
             else {
-                cout << dq.back() << "\n";
-                dq.pop_back();
+                cout << dat[tail-1] << "\n";
+                tail--;
             }
         }
 
         else if (cmp == "size") {
-            cout << dq.size() << "\n";
+            cout << tail-head << "\n";
         }
 
         else if (cmp == "empty") {
-            if (dq.empty()) {
+            if (head==tail) {
                 cout << 1 << "\n";
             }
             else {
@@ -60,20 +61,20 @@ int main(void) {
         }
 
         else if (cmp == "front") {
-            if (dq.empty()) {
+            if (head==tail) {
                 cout << -1 << "\n";
             }
             else {
-                cout << dq.front() <<"\n";
+                cout << dat[head] <<"\n";
             }
         }
 
         else {
-            if (dq.empty()) {
+            if (head==tail) {
                 cout << -1 << "\n";
             }
             else {
-                cout << dq.back() << "\n";
+                cout << dat[tail-1] << "\n";
             }
         }
     }
