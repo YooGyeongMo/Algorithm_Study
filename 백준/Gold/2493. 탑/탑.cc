@@ -1,23 +1,34 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <stack>
+#include <utility>
+
 using namespace std;
-#define X first
-#define Y second
 
-int N;
-stack<pair<int,int>> tower;
+int main(void) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-int main() {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
+    int N;
+    cin >> N;
 
-  cin >> N;  
-  tower.push({100000001, 0});
-  for (int i = 1; i <= N; i++) {
-    int height;
-    cin >> height;
-    while (tower.top().X < height)
-      tower.pop();    
-    cout << tower.top().Y << " ";
-    tower.push({height, i});      
-  }
+    stack<pair<int, int>> tower; // {높이, 번호}
+
+    for (int i = 1; i <= N; i++) {
+        int height;
+        cin >> height;
+
+        while (!tower.empty() && tower.top().first < height) {
+            tower.pop();
+        }
+
+        if (tower.empty()) {
+            cout << 0 << " ";
+        } else {
+            cout << tower.top().second << " ";
+        }
+
+        tower.push({height, i});
+    }
+
+    return 0;
 }
