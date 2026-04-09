@@ -1,26 +1,33 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <stack>
+
 using namespace std;
-#define X first
-#define Y second
 
 int main(void) {
-  ios::sync_with_stdio(0);
-  cin.tie(0);
-  int n;
-  cin >> n;
-  stack<pair<int, int>> S;
-  long long ans = 0;
-  while (n--) {
-    int h;
-    cin >> h;
-    int cnt = 1;
-    while (!S.empty() && S.top().X <= h) {
-      ans += S.top().Y;
-      if (S.top().X == h) cnt += S.top().Y;
-      S.pop();
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int N;
+    stack<pair<int, int>> s;
+
+    long long result = 0;
+
+    cin >> N;
+
+    while (N--) {
+        int h;
+        cin >> h;
+        int cnt = 1;
+
+        while (!s.empty() && s.top().first <= h) {
+            result += s.top().second;
+            if (s.top().first == h) cnt += s.top().second;
+            s.pop();
+        }
+        if (!s.empty()) result++;
+        s.push({h, cnt});
     }
-    if (!S.empty()) ans++;
-    S.push({h, cnt});
-  }
-  cout << ans;
+    
+    cout << result;
+
 }
