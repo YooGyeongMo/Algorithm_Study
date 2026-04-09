@@ -27,7 +27,7 @@ int main(void) {
         if (!s.empty()) result++;
         s.push({h, cnt});
     }
-    
+
     cout << result;
 
 }
