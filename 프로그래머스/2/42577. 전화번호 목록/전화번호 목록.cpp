@@ -1,19 +1,29 @@
 #include <string>
 #include <vector>
-#include <algorithm>
+#include <unordered_map>
 
 using namespace std;
 
 bool solution(vector<string> phone_book)
 {
-    sort(phone_book.begin(), phone_book.end());
-    int vSize = (int)phone_book.size();
+    unordered_map<string, int> map;
     
+    for (const string& number : phone_book) {
+        map[number]++;
+    }
     
-    for (int i = 0; i < vSize - 1; i++) {
-        if (phone_book[i+1].find(phone_book[i]) == 0) {
-            return false;
+    for (string number : phone_book) {
+        string temp = "";
+        for (int i = 0; i < number.size()-1; i++) {
+            temp += number[i];
+            
+            if (map.find(temp) != map.end()) {
+                return false;
+            }
         }
     }
+    
     return true;
+    
+    
 }
