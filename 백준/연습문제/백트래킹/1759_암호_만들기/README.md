@@ -25,6 +25,33 @@
 
 각 줄에 하나씩, 사전식으로 가능성 있는 암호를 모두 출력한다.
 
+
+## 예제 입력 1
+
+```
+4 6
+a t c i s w
+```
+
+## 예제 출력 1
+
+```
+acis
+acit
+aciw
+acst
+acsw
+actw
+aist
+aisw
+aitw
+astw
+cist
+cisw
+citw
+istw
+```
+
 ## 풀이
 
 ```cpp
