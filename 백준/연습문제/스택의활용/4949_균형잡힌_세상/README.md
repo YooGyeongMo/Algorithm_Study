@@ -35,6 +35,32 @@
 
 각 줄마다 해당 문자열이 균형을 이루고 있으면 &quot;yes&quot;를, 아니면 &quot;no&quot;를 출력한다.
 
+
+## 예제 입력 1
+
+```
+So when I die (the [first] I will see in (heaven) is a score list).
+[ first in ] ( first out ).
+Half Moon tonight (At least it is better than no Moon at all].
+A rope may form )( a trail in a maze.
+Help( I[m being held prisoner in a fortune cookie factory)].
+([ (([( [ ] ) ( ) (( ))] )) ]).
+ .
+.
+```
+
+## 예제 출력 1
+
+```
+yes
+yes
+no
+no
+no
+yes
+yes
+```
+
 ## 풀이
 
 ```cpp
