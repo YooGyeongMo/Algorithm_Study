@@ -29,6 +29,67 @@
 
 한줄에 내일로 티켓을 사는 것이 좋으면 &lsquo;Yes&rsquo;를 출력하고 그렇지 않으면 &lsquo;No&rsquo;를 출력합니다. 내일로 티켓을 사더라도 비용이 정확히 같다면 &lsquo;No&rsquo;를 출력합니다.
 
+
+## 예제 입력 1
+
+```
+14 40000
+Boseong Busan Changwon Cheonan Chuncheon Daegu Daejeon Gwangju Jeonju Jinju Masan Seoul Suncheon Yeosu
+9
+Seoul Jeonju Suncheon Yeosu Suncheon Boseong Jinju Busan Seoul
+23
+KTX Seoul Busan 20000
+KTX Seoul Gwangju 12000
+KTX Gwangju Yeosu 8000
+KTX Seoul Jinju 17000
+ITX-Saemaeul Seoul Cheonan 7000
+ITX-Cheongchun Seoul Chuncheon 3000
+V-Train Chuncheon Daegu 10000
+Subway Seoul Cheonan 2000
+ITX-Saemaeul Cheonan Daejeon 4000
+ITX-Saemaeul Daejeon Daegu 10000
+ITX-Saemaeul Daegu Busan 7000
+Mugunghwa Daejeon Daegu 6000
+Mugunghwa Daejeon Gwangju 5000
+Mugunghwa Gwangju Jeonju 1500
+Mugunghwa Jeonju Suncheon 4000
+Mugunghwa Suncheon Yeosu 1500
+S-Train Busan Changwon 3000
+S-Train Changwon Masan 1000
+S-Train Masan Jinju 2000
+S-Train Jinju Suncheon 2000
+S-Train Suncheon Boseong 1000
+Bus Busan Jinju 1500
+Bus Suncheon Jinju 4000
+```
+
+## 예제 출력 1
+
+```
+Yes
+```
+
+## 예제 입력 2
+
+```
+5 50000
+Seoul Cheonan Daejeon Daegu Busan
+3
+Seoul Busan Seoul
+5
+ITX-Saemaeul Seoul Cheonan 7000
+ITX-Saemaeul Cheonan Daejeon 4000
+ITX-Saemaeul Daejeon Daegu 10000
+ITX-Saemaeul Daegu Busan 7000
+KTX Seoul Busan 24999
+```
+
+## 예제 출력 2
+
+```
+No
+```
+
 ## 풀이
 
 ```cpp
