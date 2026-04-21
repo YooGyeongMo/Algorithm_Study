@@ -35,6 +35,31 @@ Your program is to read from standard input. The input consists of a single line
 
 Your program is to write to standard output. The single output line should contain two integers, x and y, separated by a space, where (x,y) is the location of the lost philosopher in the given Philosopher&rsquo;s Walk.
 
+
+## 예제 입력 1
+
+```
+4 10
+```
+
+## 예제 출력 1
+
+```
+3 4
+```
+
+## 예제 입력 2
+
+```
+8 19
+```
+
+## 예제 출력 2
+
+```
+2 6
+```
+
 ## 풀이
 
 ```cpp
