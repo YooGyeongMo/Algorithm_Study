@@ -4,12 +4,22 @@
 |---|---|
 | **문제 번호** | 2557 |
 | **문제 제목** | Hello World |
+| **시간 제한** | 1 초 |
+| **메모리 제한** | 128 MB |
 | **분류** | 기초코드작성요령 |
 | **링크** | [백준 2557번](https://www.acmicpc.net/problem/2557) |
 
-## 문제 설명
+## 문제
 
-> [백준 2557번 - Hello World](https://www.acmicpc.net/problem/2557) 참고
+	Hello World!를 출력하시오.
+
+## 입력
+
+	없음
+
+## 출력
+
+	Hello World!를 출력하시오.
 
 ## 풀이
 
