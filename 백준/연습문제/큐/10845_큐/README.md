@@ -30,6 +30,45 @@
 
 출력해야하는 명령이 주어질 때마다, 한 줄에 하나씩 출력한다.
 
+
+## 예제 입력 1
+
+```
+15
+push 1
+push 2
+front
+back
+size
+empty
+pop
+pop
+pop
+size
+empty
+pop
+push 3
+empty
+front
+```
+
+## 예제 출력 1
+
+```
+1
+2
+2
+0
+1
+2
+-1
+0
+1
+-1
+0
+3
+```
+
 ## 풀이
 
 ```cpp
