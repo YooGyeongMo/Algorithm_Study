@@ -43,6 +43,65 @@ XXXXXXX...XXXX... ..XXXX.....XX.... ....X............
 
 첫째 줄에 문제에서 주어진 걸리는 날을 출력한다.
 
+
+## 예제 입력 1
+
+```
+10 2
+.L
+..
+XX
+XX
+XX
+XX
+XX
+XX
+..
+.L
+```
+
+## 예제 출력 1
+
+```
+3
+```
+
+## 예제 입력 2
+
+```
+4 11
+..XXX...X..
+.X.XXX...L.
+....XXX..X.
+X.L..XXX...
+```
+
+## 예제 출력 2
+
+```
+2
+```
+
+## 예제 입력 3
+
+```
+8 17
+...XXXXXX..XX.XXX
+....XXXXXXXXX.XXX
+...XXXXXXXXXXXX..
+..XXXXX.LXXXXXX..
+.XXXXXX..XXXXXX..
+XXXXXXX...XXXX...
+..XXXXX...XXX....
+....XXXXX.XXXL...
+```
+
+## 예제 출력 3
+
+```
+2
+```
+
 ## 풀이
 
 ```cpp
