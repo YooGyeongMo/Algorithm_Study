@@ -26,6 +26,42 @@
 
 조건에 따라 정렬하여 단어들을 출력한다.
 
+
+## 예제 입력 1
+
+```
+13
+but
+i
+wont
+hesitate
+no
+more
+no
+more
+it
+cannot
+wait
+im
+yours
+```
+
+## 예제 출력 1
+
+```
+i
+im
+it
+no
+but
+more
+wait
+wont
+yours
+cannot
+hesitate
+```
+
 ## 풀이
 
 ```cpp

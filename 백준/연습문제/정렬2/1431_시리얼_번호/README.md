@@ -31,6 +31,83 @@
 
 첫째 줄부터 차례대로 N개의 줄에 한줄에 하나씩 시리얼 번호를 정렬한 결과를 출력한다.
 
+
+## 예제 입력 1
+
+```
+5
+ABCD
+145C
+A
+A910
+Z321
+```
+
+## 예제 출력 1
+
+```
+A
+ABCD
+Z321
+145C
+A910
+```
+
+## 예제 입력 2
+
+```
+2
+Z19
+Z20
+```
+
+## 예제 출력 2
+
+```
+Z20
+Z19
+```
+
+## 예제 입력 3
+
+```
+4
+34H2BJS6N
+PIM12MD7RCOLWW09
+PYF1J14TF
+FIPJOTEA5
+```
+
+## 예제 출력 3
+
+```
+FIPJOTEA5
+PYF1J14TF
+34H2BJS6N
+PIM12MD7RCOLWW09
+```
+
+## 예제 입력 4
+
+```
+5
+ABCDE
+BCDEF
+ABCDA
+BAAAA
+ACAAA
+```
+
+## 예제 출력 4
+
+```
+ABCDA
+ABCDE
+ACAAA
+BAAAA
+BCDEF
+```
+
 ## 풀이
 
 ```cpp

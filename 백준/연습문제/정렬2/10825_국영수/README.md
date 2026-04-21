@@ -26,6 +26,42 @@
 
 문제에 나와있는 정렬 기준으로 정렬한 후 첫째 줄부터 N개의 줄에 걸쳐 각 학생의 이름을 출력한다.
 
+
+## 예제 입력 1
+
+```
+12
+Junkyu 50 60 100
+Sangkeun 80 60 50
+Sunyoung 80 70 100
+Soong 50 60 90
+Haebin 50 60 100
+Kangsoo 60 80 100
+Donghyuk 80 60 100
+Sei 70 70 70
+Wonseob 70 70 90
+Sanghyun 70 70 80
+nsj 80 80 80
+Taewhan 50 60 90
+```
+
+## 예제 출력 1
+
+```
+Donghyuk
+Sangkeun
+Sunyoung
+nsj
+Wonseob
+Sanghyun
+Sei
+Kangsoo
+Haebin
+Junkyu
+Soong
+Taewhan
+```
+
 ## 풀이
 
 ```cpp
