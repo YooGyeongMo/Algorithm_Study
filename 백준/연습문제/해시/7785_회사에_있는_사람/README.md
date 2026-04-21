@@ -27,6 +27,24 @@
 
 현재 회사에 있는 사람의 이름을 사전 순의 역순으로 한 줄에 한 명씩 출력한다.
 
+
+## 예제 입력 1
+
+```
+4
+Baha enter
+Askar enter
+Baha leave
+Artem enter
+```
+
+## 예제 출력 1
+
+```
+Askar
+Artem
+```
+
 ## 풀이
 
 ```cpp

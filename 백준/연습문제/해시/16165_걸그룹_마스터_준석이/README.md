@@ -21,6 +21,62 @@
 
 첫 번째 줄부터 차례대로 퀴즈에 대한 답을 출력한다. 퀴즈의 종류가 0일 경우 해당 팀에 속한 멤버의 이름을 사전순으로 한 줄에 한 명씩 출력한다. 퀴즈의 종류가 1일 경우 해당 멤버가 속한 팀의 이름을 출력한다.
 
+
+## 예제 입력 1
+
+```
+3 4
+twice
+9
+jihyo
+dahyeon
+mina
+momo
+chaeyoung
+jeongyeon
+tzuyu
+sana
+nayeon
+blackpink
+4
+jisu
+lisa
+rose
+jenny
+redvelvet
+5
+wendy
+irene
+seulgi
+yeri
+joy
+sana
+1
+wendy
+1
+twice
+0
+rose
+1
+```
+
+## 예제 출력 1
+
+```
+twice
+redvelvet
+chaeyoung
+dahyeon
+jeongyeon
+jihyo
+mina
+momo
+nayeon
+sana
+tzuyu
+blackpink
+```
+
 ## 풀이
 
 ```cpp

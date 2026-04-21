@@ -44,6 +44,59 @@
 
 출석이 확인된 학회원의 인원 수를 출력한다.
 
+
+## 예제 입력 1
+
+```
+22:00 23:00 23:30
+21:30 malkoring
+21:33 tolelom
+21:34 minjae705
+21:35 hhan14
+21:36 dicohy27
+21:40 906bc
+23:00 906bc
+23:01 tolelom
+23:10 minjae705
+23:11 hhan14
+23:20 dicohy27
+```
+
+## 예제 출력 1
+
+```
+5
+```
+
+## 예제 입력 2
+
+```
+06:00 12:00 18:00
+06:00 shinyo17
+06:00 kimchist
+06:00 swoon
+06:00 kheee512
+06:00 Green55
+09:00 kimchist
+11:59 shinyo17
+12:00 kimchist
+17:59 swoon
+17:59 swoon
+18:00 kheee512
+18:01 swoon
+18:01 Green55
+18:01 kheee512
+18:01 swoon
+18:21 jinius36
+18:40 jeongyun1206
+```
+
+## 예제 출력 2
+
+```
+3
+```
+
 ## 풀이
 
 ```cpp

@@ -25,6 +25,42 @@ N+2번째 줄부터 M개의 줄에 걸쳐 비밀번호를 찾으려는 사이트
 
 첫 번째 줄부터 M개의 줄에 걸쳐 비밀번호를 찾으려는 사이트 주소의 비밀번호를 차례대로 각 줄에 하나씩 출력한다.
 
+
+## 예제 입력 1
+
+```
+16 4
+noj.am IU
+acmicpc.net UAENA
+startlink.io THEKINGOD
+google.com ZEZE
+nate.com VOICEMAIL
+naver.com REDQUEEN
+daum.net MODERNTIMES
+utube.com BLACKOUT
+zum.com LASTFANTASY
+dreamwiz.com RAINDROP
+hanyang.ac.kr SOMEDAY
+dhlottery.co.kr BOO
+duksoo.hs.kr HAVANA
+hanyang-u.ms.kr OBLIVIATE
+yd.es.kr LOVEATTACK
+mcc.hanyang.ac.kr ADREAMER
+startlink.io
+acmicpc.net
+noj.am
+mcc.hanyang.ac.kr
+```
+
+## 예제 출력 1
+
+```
+THEKINGOD
+UAENA
+IU
+ADREAMER
+```
+
 ## 풀이
 
 ```cpp

@@ -26,6 +26,28 @@
 
 각 테스트 케이스에 대해 해빈이가 알몸이 아닌 상태로 의상을 입을 수 있는 경우를 출력하시오.
 
+
+## 예제 입력 1
+
+```
+2
+3
+hat headgear
+sunglasses eyewear
+turban headgear
+3
+mask face
+sunglasses face
+makeup face
+```
+
+## 예제 출력 1
+
+```
+5
+3
+```
+
 ## 풀이
 
 ```cpp
