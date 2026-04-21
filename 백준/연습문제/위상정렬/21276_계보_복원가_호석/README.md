@@ -31,6 +31,36 @@
 
 세번째 줄부터는 이름의 사전순 대로 사람의 이름과 자식의 수, 그리고 사전순으로 자식들의 이름을 공백으로 구분하여 출력하라.
 
+
+## 예제 입력 1
+
+```
+7
+daeil sangdo yuri hoseok minji doha haeun
+7
+hoseok sangdo
+yuri minji
+hoseok daeil
+daeil sangdo
+haeun doha
+doha minji
+haeun minji
+```
+
+## 예제 출력 1
+
+```
+2
+minji sangdo
+daeil 1 hoseok
+doha 1 haeun
+haeun 0
+hoseok 0
+minji 2 doha yuri
+sangdo 1 daeil
+yuri 0
+```
+
 ## 풀이
 
 ```cpp
