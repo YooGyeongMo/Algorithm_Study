@@ -29,6 +29,34 @@
 
 자세한 사항은 예제 출력을 참고하라.
 
+
+## 예제 입력 1
+
+```
+4
+ABC
+ABC
+ABCBBBABC
+ABC
+ABC
+ABCBCAABC
+D7a
+D7a
+D7aaD77aDD7a
+ABC
+ABC
+ABC
+```
+
+## 예제 출력 1
+
+```
+no solution
+unique: 1
+ambiguous: 1 2
+unique: 0
+```
+
 ## 풀이
 
 ```cpp
