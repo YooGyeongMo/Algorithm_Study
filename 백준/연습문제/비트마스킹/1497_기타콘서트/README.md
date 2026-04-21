@@ -29,6 +29,84 @@
 
 첫째 줄에 필요한 기타의 개수를 출력한다. 만약 연주할 수 있는 곡이 없으면 -1을 출력한다.
 
+
+## 예제 입력 1
+
+```
+4 5
+GIBSON YYYNN
+FENDER YYNNY
+EPIPHONE NNNYY
+ESP YNNNN
+```
+
+## 예제 출력 1
+
+```
+2
+```
+
+## 예제 입력 2
+
+```
+3 5
+GIBSON YNYYN
+FENDER NNNYY
+TAYLOR YYYYY
+```
+
+## 예제 출력 2
+
+```
+1
+```
+
+## 예제 입력 3
+
+```
+3 2
+AB YN
+AA YN
+BA NN
+```
+
+## 예제 출력 3
+
+```
+1
+```
+
+## 예제 입력 4
+
+```
+5 7
+FENDER YYNNYNN
+GIBSON YYYNYNN
+CRAFTER NNNNNYY
+EPIPHONE NNYNNNN
+BCRICH NNNYNNN
+```
+
+## 예제 출력 4
+
+```
+3
+```
+
+## 예제 입력 5
+
+```
+2 25
+GIBSON NNNNNNNNNNNNNNNNNNNNNNNNN
+FENDER NNNNNNNNNNNNNNNNNNNNNNNNN
+```
+
+## 예제 출력 5
+
+```
+-1
+```
+
 ## 풀이
 
 ```cpp
