@@ -31,6 +31,34 @@
 
 첫째 줄에 M개의 문자열 중에 총 몇 개가 포함되어 있는 문자열 중 적어도 하나의 접두사인지 출력한다.
 
+
+## 예제 입력 1
+
+```
+5 10
+baekjoononlinejudge
+startlink
+codeplus
+sundaycoding
+codingsh
+baekjoon
+star
+start
+code
+sunday
+coding
+cod
+online
+judge
+plus
+```
+
+## 예제 출력 1
+
+```
+7
+```
+
 ## 풀이
 
 ```cpp

@@ -32,6 +32,37 @@
 
 각 테스트 케이스마다 한 줄에 걸쳐 문제의 정답을 출력한다.
 
+
+## 예제 입력 1
+
+```
+1
+11
+BAPC.in
+BAPC.out
+BAPC.tex
+filter
+filename
+filenames
+clean
+cleanup.IN1
+cleanup.IN2
+cleanup.out
+problem.tex
+5
+BAPC
+files
+cleanup
+cleanup.IN
+cleaning
+```
+
+## 예제 출력 1
+
+```
+8
+```
+
 ## 풀이
 
 ```cpp

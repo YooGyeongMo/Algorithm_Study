@@ -25,6 +25,37 @@
 
 디렉토리 구조를 보기 좋게 출력한다. 한 줄에 하나씩 디렉토리의 이름을 출력하며, 공백은 디렉토리 구조상에서 깊이를 의미한다. 각 서브 디렉토리는 사전순으로 출력해야 하며, 부모 디렉토리에서 출력한 공백의 개수보다 1개 많게 공백을 출력한다. 예제 출력을 보면서 형식을 참고하는 것이 좋다.
 
+
+## 예제 입력 1
+
+```
+7
+WINNT\SYSTEM32\CONFIG
+GAMES
+WINNT\DRIVERS
+HOME
+WIN\SOFT
+GAMES\DRIVERS
+WINNT\SYSTEM32\CERTSRV\CERTCO~1\X86
+```
+
+## 예제 출력 1
+
+```
+GAMES
+ DRIVERS
+HOME
+WIN
+ SOFT
+WINNT
+ DRIVERS
+ SYSTEM32
+  CERTSRV
+   CERTCO~1
+    X86
+  CONFIG
+```
+
 ## 풀이
 
 ```cpp

@@ -33,6 +33,76 @@
 
 유저가 가입한 순서대로 별칭을 한 줄에 하나씩 출력한다.
 
+
+## 예제 입력 1
+
+```
+5
+baekjoon
+startlink
+bakejoon
+beakjoon
+baekjoon
+```
+
+## 예제 출력 1
+
+```
+b
+s
+bak
+be
+baekjoon2
+```
+
+## 예제 입력 2
+
+```
+7
+codeplus
+startlink
+beakjoon
+baek
+baekjoon
+baek
+codingwiki
+```
+
+## 예제 출력 2
+
+```
+c
+s
+b
+ba
+baekj
+baek2
+codi
+```
+
+## 예제 입력 3
+
+```
+6
+abcd
+ab
+ab
+a
+a
+ab
+```
+
+## 예제 출력 3
+
+```
+a
+ab
+ab2
+a
+a2
+ab3
+```
+
 ## 풀이
 
 ```cpp

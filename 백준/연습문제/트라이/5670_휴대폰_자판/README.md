@@ -30,6 +30,37 @@
 
 각 테스트 케이스마다 한 줄에 걸쳐 문제의 정답을 소수점 둘째 자리까지 반올림하여 출력한다.
 
+
+## 예제 입력 1
+
+```
+4
+hello
+hell
+heaven
+goodbye
+3
+hi
+he
+h
+7
+structure
+structures
+ride
+riders
+stress
+solstice
+ridiculous
+```
+
+## 예제 출력 1
+
+```
+2.00
+1.67
+2.71
+```
+
 ## 풀이
 
 ```cpp

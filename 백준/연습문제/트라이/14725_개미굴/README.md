@@ -70,6 +70,50 @@ KIWI
 
 최상위 굴을 포함하여 하나의 굴에서 개미굴이 여러개로 나뉠 때 먹이 종류별로 최대 한 번만 나올 수 있다.
 
+
+## 예제 입력 1
+
+```
+3
+2 B A
+4 A B C D
+2 A C
+```
+
+## 예제 출력 1
+
+```
+A
+--B
+----C
+------D
+--C
+B
+--A
+```
+
+## 예제 입력 2
+
+```
+4
+2 KIWI BANANA
+2 KIWI APPLE
+2 APPLE APPLE
+3 APPLE BANANA KIWI
+```
+
+## 예제 출력 2
+
+```
+APPLE
+--APPLE
+--BANANA
+----KIWI
+KIWI
+--APPLE
+--BANANA
+```
+
 ## 풀이
 
 ```cpp
