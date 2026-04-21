@@ -25,6 +25,38 @@
 
 입력으로 주어진 그래프에 트리가 없다면 &quot;No trees.&quot;를, 한 개라면 &quot;There is one tree.&quot;를, T개(T > 1)라면 &quot;A forest of T trees.&quot;를 테스트 케이스 번호와 함께 출력한다.
 
+
+## 예제 입력 1
+
+```
+6 3
+1 2
+2 3
+3 4
+6 5
+1 2
+2 3
+3 4
+4 5
+5 6
+6 6
+1 2
+2 3
+1 3
+4 5
+5 6
+6 4
+0 0
+```
+
+## 예제 출력 1
+
+```
+Case 1: A forest of 3 trees.
+Case 2: There is one tree.
+Case 3: No trees.
+```
+
 ## 풀이
 
 ```cpp
