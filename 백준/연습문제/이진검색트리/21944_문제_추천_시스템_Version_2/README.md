@@ -75,6 +75,69 @@ $N + 2$줄은 입력될 명령문의 개수 $M$이 주어진다.
 
 recommend, recommend2, recommend3 명령이 주어질 때마다 문제 번호를 한 줄씩 출력한다. 주어지는 recommend, recommend2, recommend3 명령어의 총 개수는 최소 1개 이상이다.
 
+
+## 예제 입력 1
+
+```
+5
+1000 1 1
+1001 2 1
+19998 78 2
+2667 37 3
+2042 55 3
+12
+add 1402 59 1
+recommend 1 1
+recommend2 1
+recommend3 1 50
+recommend3 -1 50
+solved 1000
+solved 2667
+recommend 2 1
+recommend 1 -1
+recommend2 -1
+solved 1001
+recommend 1 -1
+```
+
+## 예제 출력 1
+
+```
+1402
+19998
+2042
+2667
+19998
+1001
+1001
+1402
+```
+
+## 예제 입력 2
+
+```
+3
+19998 78 2
+2667 37 3
+2042 55 3
+6
+recommend3 -1 50
+solved 2667
+recommend3 -1 50
+recommend3 1 70
+solved 19998
+recommend3 1 70
+```
+
+## 예제 출력 2
+
+```
+2667
+-1
+19998
+-1
+```
+
 ## 풀이
 
 ```cpp
