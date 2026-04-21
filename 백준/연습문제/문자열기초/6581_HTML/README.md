@@ -36,6 +36,41 @@
 
 여러 개의 연속된 개행 문자, 공백 문자, 탭 문자는 하나의 공백문자로 출력한다.
 
+
+## 예제 입력 1
+
+```
+Hallo, dies ist eine 
+ziemlich lange Zeile, die in Html
+aber nicht umgebrochen wird.
+&lt;br&gt;
+Zwei &lt;br&gt; &lt;br&gt; produzieren zwei Newlines. 
+Es gibt auch noch das tag &lt;hr&gt; was einen Trenner darstellt.
+Zwei &lt;hr&gt; &lt;hr&gt; produzieren zwei Horizontal Rulers.
+Achtung       mehrere Leerzeichen irritieren
+
+Html genauso wenig wie
+
+
+mehrere Leerzeilen.
+```
+
+## 예제 출력 1
+
+```
+Hallo, dies ist eine ziemlich lange Zeile, die in Html aber nicht umgebrochen
+wird.
+Zwei
+
+produzieren zwei Newlines. Es gibt auch noch das tag
+--------------------------------------------------------------------------------
+was einen Trenner darstellt. Zwei
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+produzieren zwei Horizontal Rulers. Achtung mehrere Leerzeichen irritieren Html
+genauso wenig wie mehrere Leerzeilen.
+```
+
 ## 풀이
 
 ```cpp

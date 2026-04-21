@@ -25,6 +25,25 @@
 
 각 테스트케이스마다 여우의 울음소리를 한 줄씩, 녹음된 순서대로 출력한다. 여우의 울음소리가 녹음되어 있음이 보장된다. (알려진 것과는 달리, 여우는 모스 부호로 의사소통하지 않는다.)
 
+
+## 예제 입력 1
+
+```
+1
+toot woof wa ow ow ow pa blub blub pa toot pa blub pa pa ow pow toot
+dog goes woof
+fish goes blub
+elephant goes toot
+seal goes ow
+what does the fox say?
+```
+
+## 예제 출력 1
+
+```
+wa pa pa pa pa pa pow
+```
+
 ## 풀이
 
 ```cpp

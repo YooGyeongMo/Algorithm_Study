@@ -29,6 +29,56 @@
 
 규칙에 맞게 순서대로 문자열을 출력한다.
 
+
+## 예제 입력 1
+
+```
+ZOAC
+```
+
+## 예제 출력 1
+
+```
+A
+AC
+OAC
+ZOAC
+```
+
+## 예제 입력 2
+
+```
+BAC
+```
+
+## 예제 출력 2
+
+```
+A
+AC
+BAC
+```
+
+## 예제 입력 3
+
+```
+STARTLINK
+```
+
+## 예제 출력 3
+
+```
+A
+AI
+AIK
+AINK
+ALINK
+ARLINK
+ARTLINK
+SARTLINK
+STARTLINK
+```
+
 ## 풀이
 
 ```cpp

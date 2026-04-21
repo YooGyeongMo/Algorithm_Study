@@ -39,6 +39,49 @@
 
 참고로, &quot;DA&quot;는 크로아티어어로 &quot;YES&quot;를, &quot;NE&quot;는 &quot;NO&quot;를 의미한다.
 
+
+## 예제 입력 1
+
+```
+3
+a*d
+abcd
+anestonestod
+facebook
+```
+
+## 예제 출력 1
+
+```
+DA
+DA
+NE
+```
+
+## 예제 입력 2
+
+```
+6
+h*n
+huhovdjestvarnomozedocisvastan
+honijezakon
+atila
+je
+bio
+hun
+```
+
+## 예제 출력 2
+
+```
+DA
+DA
+NE
+NE
+NE
+DA
+```
+
 ## 풀이
 
 ```cpp

@@ -29,6 +29,91 @@
 
 첫째 줄에 문자열 S의 단어를 뒤집어서 출력한다.
 
+
+## 예제 입력 1
+
+```
+baekjoon online judge
+```
+
+## 예제 출력 1
+
+```
+noojkeab enilno egduj
+```
+
+## 예제 입력 2
+
+```
+&lt;open&gt;tag&lt;close&gt;
+```
+
+## 예제 출력 2
+
+```
+&lt;open&gt;gat&lt;close&gt;
+```
+
+## 예제 입력 3
+
+```
+&lt;ab cd&gt;ef gh&lt;ij kl&gt;
+```
+
+## 예제 출력 3
+
+```
+&lt;ab cd&gt;fe hg&lt;ij kl&gt;
+```
+
+## 예제 입력 4
+
+```
+one1 two2 three3 4fourr 5five 6six
+```
+
+## 예제 출력 4
+
+```
+1eno 2owt 3eerht rruof4 evif5 xis6
+```
+
+## 예제 입력 5
+
+```
+&lt;int&gt;&lt;max&gt;2147483647&lt;long long&gt;&lt;max&gt;9223372036854775807
+```
+
+## 예제 출력 5
+
+```
+&lt;int&gt;&lt;max&gt;7463847412&lt;long long&gt;&lt;max&gt;7085774586302733229
+```
+
+## 예제 입력 6
+
+```
+&lt;problem&gt;17413&lt;is hardest&gt;problem ever&lt;end&gt;
+```
+
+## 예제 출력 6
+
+```
+&lt;problem&gt;31471&lt;is hardest&gt;melborp reve&lt;end&gt;
+```
+
+## 예제 입력 7
+
+```
+&lt;   space   &gt;space space space&lt;    spa   c e&gt;
+```
+
+## 예제 출력 7
+
+```
+&lt;   space   &gt;ecaps ecaps ecaps&lt;    spa   c e&gt;
+```
+
 ## 풀이
 
 ```cpp
