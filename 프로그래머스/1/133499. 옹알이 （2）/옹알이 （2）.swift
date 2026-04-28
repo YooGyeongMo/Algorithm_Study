@@ -1,24 +1,20 @@
 import Foundation
 
 func solution(_ babbling: [String]) -> Int {
-    let words = [("aya", "1"), ("ye", "2"), ("woo", "3"), ("ma", "4")]
-    var count = 0
+    
+    let words = ["aya", "ye", "woo", "ma"]
+    var result = 0
     
     for babble in babbling {
-        var temp = babble
-        
-        for (word, number) in words {
-            temp = temp.replacingOccurrences(of: word, with: number)
+        var word = babble
+        for i in 0..<words.count {
+            word = word.replacingOccurrences(of: words[i], with: String(i+1))
         }
         
-        if temp.contains("11") || temp.contains("22") || temp.contains("33") || temp.contains("44") {
-            continue
-        }
-        
-        if temp.allSatisfy({ "1234".contains($0) }) {
-            count += 1
+        if Int(word) != nil && !word.contains("11") && !word.contains("22") && !word.contains("33") && !word.contains("44") {
+            result += 1
         }
     }
     
-    return count
+    return result
 }
