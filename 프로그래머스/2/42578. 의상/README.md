@@ -1,10 +1,10 @@
 # [level 2] 의상 - 42578 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42578?language=cpp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42578?language=swift) 
 
 ### 성능 요약
 
-메모리: 4.01 MB, 시간: 0.02 ms
+메모리: 16.5 MB, 시간: 0.08 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 04월 20일 01:35:50
+2026년 04월 29일 20:51:56
 
 ### 문제 설명
 
