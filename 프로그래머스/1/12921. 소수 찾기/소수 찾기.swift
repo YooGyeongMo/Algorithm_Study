@@ -1,26 +1,19 @@
 func solution(_ n:Int) -> Int {
+    if n < 2 { return 0 }
     
-    guard n >= 2 else {
-        return 0
-    }
+    var isPrime = Array(repeating: 0, count: n+1)
+    var cnt = 0
     
-    var isPrime = Array(repeating: true, count: n+1)
     
-    isPrime[0] = false
-    isPrime[1] = false
-    
-    var i = 2
-    
-    while i * i <= n {
-        if isPrime[i] {
-            var j = i*i
-            while j <= n {
-                isPrime[j] = false
-                j += i
-            } 
+    for i in 2...n {
+        if isPrime[i] == 0 {
+            cnt += 1
+            
+            for j in stride(from: i , through: n , by: i) {
+                isPrime[j] = 1
+            }
         }
-        i += 1
     }
     
-    return isPrime.filter{$0}.count
+    return cnt
 }
