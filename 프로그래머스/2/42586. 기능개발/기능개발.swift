@@ -2,23 +2,22 @@ import Foundation
 
 func solution(_ progresses:[Int], _ speeds:[Int]) -> [Int] {
     
-    var lastRelease = 0
-    var releaseArr: [Int] = []
+    var release: [Int] = []
+    var previousDay = 0
     
     for i in 0..<progresses.count {
-        let progress = Double(progresses[i])
-        let speed = Double(speeds[i])
-        let day = Int(ceil((100-progress) / speed))
+        let progress = progresses[i]
+        let speed = speeds[i]
+        let releaseDay = Int(ceil(Double(100-progress) / Double(speed)))
         
-        if ( day > lastRelease) {
-            lastRelease = day
-            releaseArr.append(1)   
+        if previousDay >= releaseDay {
+            release[release.count-1] += 1
         }
         else {
-            releaseArr[releaseArr.count - 1] += 1
+            release.append(1)
+            previousDay = releaseDay
         }
     }
     
-    
-    return releaseArr
+    return release
 }
