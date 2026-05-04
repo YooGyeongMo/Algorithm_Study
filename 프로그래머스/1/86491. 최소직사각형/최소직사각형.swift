@@ -2,26 +2,18 @@ import Foundation
 
 func solution(_ sizes:[[Int]]) -> Int {
     
-    var result: [[Int]] = []
+    var width = 0
+    var height = 0
     
-    for i in 0..<sizes.count {
-       let w = sizes[i].max()!
-       let h = sizes[i].min()!
-       result.append([w,h])
-    }
-    
-    var width = Int.min
-    var height = Int.min
-    
-    for i in 0..<result.count {
-        if width < result[i][0] {
-            width = result[i][0]
-        }
+    for size in sizes {
+       let w = max(size[0], size[1])
+       let h = min(size[0], size[1])
         
-        if height < result[i][1] {
-            height = result[i][1]
-        }
+       width = max(width, w)
+       height = max(height, h)
     }
+    
+ 
     
     return width * height
 }
