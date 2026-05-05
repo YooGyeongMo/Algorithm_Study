@@ -2,58 +2,63 @@ import Foundation
 
 func solution(_ new_id:String) -> String {
     
-    var newId = new_id.lowercased()
-    var secondLevelId = ""
-    var thirdLevelId = ""
+    var id = new_id.lowercased()
     
-    for char in newId {
-        if char.isLetter || char.isNumber || char == "-" || char == "_" || char == "." {
-            secondLevelId += String(char)
-        }
+    // 2단계
+    id = id.filter {
+        $0.isLowercase || $0.isNumber || $0 == "-" || $0 == "_" || $0 == "."
     }
     
-    var check = false
+    var temp = ""
+    var isCheck = false
     
-    for char in secondLevelId {
-        
+    // 3단계
+    for char in id {
         if char == "." {
-            if !check {
-                thirdLevelId.append(char)
+            if !isCheck {
+                temp += String(char)
             }
-            check = true
+            isCheck = true
         }
         else {
-            thirdLevelId.append(char)
-            check = false
+            temp += String(char)
+            isCheck = false
+        }   
+    }
+    id = temp
+    
+    // 4단계
+    
+    if id.last == "." {
+        id.removeLast()
+    }
+    if id.first == "." {
+        id.removeFirst()
+    }
+    
+    // 5단계
+    
+    if id == "" {
+        id += "a"
+    }
+    
+    
+    // 6단계
+    
+    if id.count >= 16 {
+        id = String(id.prefix(15))
+        if id.last! == "." {
+            id.removeLast()
         }
     }
     
-    if thirdLevelId.last == "."  {
-        thirdLevelId.removeLast()
-    }
-    if thirdLevelId.first == "." {
-        thirdLevelId.removeFirst()
+    
+    // 7단계
+    if id.count <= 2 {
+        while id.count < 3 {
+            id += String(id.last!)
+        }
     }
     
-    if thirdLevelId == "" {
-        thirdLevelId += "a"
-    }
-    
-    if thirdLevelId.count >= 16 {
-        //thirdLevelId = String(thirdLevelId.prefix(15))
-        let index = thirdLevelId.index(thirdLevelId.startIndex, offsetBy: 15)
-        thirdLevelId = String(thirdLevelId[..<index])
-    }
-    
-    if thirdLevelId.last == "." {
-        thirdLevelId.removeLast()
-    }
-    
-    while thirdLevelId.count < 3 {
-        let last = thirdLevelId.last!
-        thirdLevelId += String(last)
-    }
-
-    
-    return thirdLevelId
+    return id
 }
