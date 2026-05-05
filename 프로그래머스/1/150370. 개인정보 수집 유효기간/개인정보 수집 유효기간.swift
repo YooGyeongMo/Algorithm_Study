@@ -2,38 +2,35 @@ import Foundation
 
 func solution(_ today:String, _ terms:[String], _ privacies:[String]) -> [Int] {
     
-    func toDays(_ date: String) -> Int {
-        let part = date.split(separator: ".").map{Int($0)!}
-        let year = part[0]
-        let month = part[1]
-        let day = part[2]
+    func toDate (_ date: String) -> Int {
+        let part = date.split(separator: ".").map{ Int($0)! }
         
-        return year * 12 * 28 + month * 28 + day
+        return part[0] * 12 * 28 + part[1] * 28 + part[2]
     }
     
-    let todayDays = toDays(today)
+    var todayByDay = toDate(today)
+    var dict: [String : Int] = [:]
     
-    var termsDict: [String: Int] = [:]
+    for item in terms {
+        let part = item.split(separator: " ").map { String($0) }
+        
+        dict[part[0]] = Int(part[1])
+    }
+    
     var result: [Int] = []
-    
-    for term in terms {
-        let part = term.split(separator: " ").map{String($0)}
-        
-        termsDict[part[0]] = Int(part[1])!
-    }
     
     for i in 0..<privacies.count {
         let part = privacies[i].split(separator: " ").map{ String($0) }
-        let date = part[0]
-        let term = part[1]
         
-        let privacyDays = toDays(date)
-        let expiredDays = privacyDays + termsDict[term]! * 28
+        let termDay = dict[part[1]]! * 28
+        let expiredDate = toDate(part[0]) + termDay
         
-        if expiredDays <= todayDays {
+        if expiredDate <= todayByDay {
             result.append(i+1)
         }
+        
     }
     
     return result
+    
 }
