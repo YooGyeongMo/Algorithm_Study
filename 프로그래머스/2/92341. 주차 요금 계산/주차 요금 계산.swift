@@ -7,56 +7,51 @@ func solution(_ fees:[Int], _ records:[String]) -> [Int] {
     let addT = fees[2]
     let addM = fees[3]
     
-    var parkingLot:[Int: Int] = [:]
-    var carTime:[Int: Int] = [:]
-    var parkingMoney: [Int: Int] = [:]
+    var parkingLot: [Int: Int] = [:]
+    var parkingTime : [Int: Int] = [:]
+
+    var result: [Int] = []
     
     func toMin(_ time: String) -> Int {
         let part = time.split(separator: ":").map{Int($0)!}
-        let h = part[0]
-        let m = part[1]
-        
-        return h * 60 + m
+        return part[0] * 60 + part[1]
     }
     
     for record in records {
-        let part = record.split(separator: " ").map{String($0)}
+        let part = record.split(separator: " ").map{ String($0) }
         
         let time = toMin(part[0])
-        let carNum = Int(part[1])!
+        let carNumber = Int(part[1])!
         let cmd = part[2]
         
         if cmd == "IN" {
-            parkingLot[carNum] = time
-        }
-        
-        else {
-            let parkingTime = time - parkingLot[carNum]!
-            parkingLot[carNum] = nil
-            carTime[carNum, default: 0] += parkingTime
-        }
-    }
-    
-    if !parkingLot.isEmpty {
-        
-        let allTime = toMin("23:59")
-        
-        for item in parkingLot {
-            let parkingTime = allTime - parkingLot[item.0]!
-            
-            carTime[item.key, default:0] += parkingTime
-        }
-    }
-    
-    for item in carTime {
-        if item.value <= primeT {
-            parkingMoney[item.key] = primeM
+            parkingLot[carNumber] = time
         }
         else {
-            
-            parkingMoney[item.key] = primeM + Int(ceil(Double(item.value - primeT) / Double(addT))) * addM
+            parkingTime[carNumber, default: 0] += time - parkingLot[carNumber]!
+            parkingLot[carNumber] = nil
         }
     }
     
-    return parkingMoney.sorted{$0.key < $1.key}.map{ $0.value }
+    let allTime = toMin("23:59")
+    
+    for item in parkingLot {
+        parkingTime[item.key, default: 0] += allTime - item.value
+    }
+    
+    
+    for item in parkingTime {
+        
+        let time = item.value
+        
+        if time <= primeT {
+            parkingTime[item.key] = primeM
+        }
+        else {
+            let money = primeM + Int(ceil(Double(item.value-primeT) / Double(addT))) * addM
+            parkingTime[item.key] = money
+        }
+    }
+    
+    return parkingTime.sorted{ $0.key < $1.key }.map{ $0.value }
 }
